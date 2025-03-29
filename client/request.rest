@@ -1,0 +1,10 @@
+GET https://api.spotify.com/v1/artists/4Z8W4fKeB5YxbusRsdQVPb"
+Authorization: Bearer BQBN3n1QuydNI9bLetCVnivSNiUpYzY4iyXebuYs2G5gfTzc28q5QmPCIsVKpHQjGoZEKkMqbnEzcFg78I9-BPPauDU1g0ZMiQGAmtUP2-OWOXZjq12lvsPAmHrqbCQ-Negj-XHuSD4
+
+### 
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username": "Kyle"
+}
