@@ -1,10 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {Box, Button, Stack} from '@mui/material';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import { Link } from "react-router";
 
+const validateEmail = (email) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};
+
 export default function SignUp() {
+  const [email, setEmail] = useState("")
+  const [isValidEmail, setIsValidEmail] = useState(true)
+  
+  const handleSubmitEmail = (email) => {
+    if(!validateEmail(email) || email == "") {
+      setIsValidEmail(false)
+    } else {
+      setIsValidEmail(true)
+    }
+  }
+
+  const handleChangeEmail = (event) => {
+    setEmail(event.target.value);
+  }
+
   return (
     <Box 
       sx={{ 
@@ -32,7 +55,7 @@ export default function SignUp() {
         >
           <Box>
             <img 
-              src="../logo.png"
+              src="../../logo.png"
               style={{
                 width: "60px",
                 objectFit: "cover",
@@ -67,7 +90,9 @@ export default function SignUp() {
               > 
                 Email 
               </Typography>
+
               <TextField 
+                {...(isValidEmail ? {} : { error: "true", helperText: "Invalid Email. Check again" })} 
                 color="primary"
                 focused
                 sx={{ 
@@ -75,11 +100,16 @@ export default function SignUp() {
                   width: '100%'
                 }} 
                 placeholder="Nhập email của bạn"
+                // value={email}
                 type="email" 
+                name="email"
+                onChange={() => handleChangeEmail(event)}
               />
             </Box>
 
             <Button 
+              {...(validateEmail(email) ? { component: Link, to: "/user/signup/step=1" } : {})}
+              onClick={() => handleSubmitEmail(email)}
               variant="contained"
               sx={{
                 padding: '12px',
