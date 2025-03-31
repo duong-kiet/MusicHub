@@ -5,6 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import Stack from '@mui/material/Stack';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
+import { Link } from "react-router"; 
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -54,6 +55,8 @@ export default function AppBar() {
 
       <Stack direction="row" spacing={1}>
         <Button 
+          component={Link}
+          to="/user/signup"
           variant="text" 
           sx={{
             padding: '12px', 
@@ -65,6 +68,8 @@ export default function AppBar() {
           Đăng ký
         </Button>
         <Button   
+          component={Link}
+          to="/user/signin"
           variant="contained"
           sx={{
             padding: '12px', 

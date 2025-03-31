@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const artistSchema = new mongoose.Schema(
+const albumSchema = new mongoose.Schema(
   {
     name: String,
     followers: Number,
@@ -11,6 +11,6 @@ const artistSchema = new mongoose.Schema(
   }
 );
 
-const Artist = mongoose.model("Artist", artistSchema, "artists");
+const Album = mongoose.model("Album", albumSchema, "albums");
 
-module.exports = Artist;
+module.exports = Album;

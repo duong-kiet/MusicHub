@@ -3,3 +3,467 @@
     "token_type": "Bearer",
     "expires_in": 3600
 }
+
+{
+    "album_type": "album",
+    "total_tracks": 13,
+    "external_urls": {
+        "spotify": "https://open.spotify.com/album/4faMbTZifuYsBllYHZsFKJ"
+    },
+    "href": "https://api.spotify.com/v1/albums/4faMbTZifuYsBllYHZsFKJ",
+    "id": "4faMbTZifuYsBllYHZsFKJ",
+    "images": [
+        {
+            "url": "https://i.scdn.co/image/ab67616d0000b273c006b0181a3846c1c63e178f",
+            "height": 640,
+            "width": 640
+        },
+        {
+            "url": "https://i.scdn.co/image/ab67616d00001e02c006b0181a3846c1c63e178f",
+            "height": 300,
+            "width": 300
+        },
+        {
+            "url": "https://i.scdn.co/image/ab67616d00004851c006b0181a3846c1c63e178f",
+            "height": 64,
+            "width": 64
+        }
+    ],
+    "name": "Ai Cũng Phải Bắt Đầu Từ Đâu Đó",
+    "release_date": "2023-10-16",
+    "release_date_precision": "day",
+    "type": "album",
+    "uri": "spotify:album:4faMbTZifuYsBllYHZsFKJ",
+    "artists": [
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5HZtdKfC4xU0wvhEyYDWiY"
+            },
+            "href": "https://api.spotify.com/v1/artists/5HZtdKfC4xU0wvhEyYDWiY",
+            "id": "5HZtdKfC4xU0wvhEyYDWiY",
+            "name": "HIEUTHUHAI",
+            "type": "artist",
+            "uri": "spotify:artist:5HZtdKfC4xU0wvhEyYDWiY"
+        }
+    ],
+    "tracks": {
+        "href": "https://api.spotify.com/v1/albums/4faMbTZifuYsBllYHZsFKJ/tracks?offset=0&limit=50",
+        "limit": 50,
+        "next": null,
+        "offset": 0,
+        "previous": null,
+        "total": 13,
+        "items": [
+            {
+                "artists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HZtdKfC4xU0wvhEyYDWiY"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HZtdKfC4xU0wvhEyYDWiY",
+                        "id": "5HZtdKfC4xU0wvhEyYDWiY",
+                        "name": "HIEUTHUHAI",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HZtdKfC4xU0wvhEyYDWiY"
+                    }
+                ],
+                "disc_number": 1,
+                "duration_ms": 138197,
+                "explicit": true,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/7FCOpozyFUgEL7h5wijLXT"
+                },
+                "href": "https://api.spotify.com/v1/tracks/7FCOpozyFUgEL7h5wijLXT",
+                "id": "7FCOpozyFUgEL7h5wijLXT",
+                "name": "Ai Cũng Phải Bắt Đầu Từ Đâu Đó",
+                "preview_url": null,
+                "track_number": 1,
+                "type": "track",
+                "uri": "spotify:track:7FCOpozyFUgEL7h5wijLXT",
+                "is_local": false
+            },
+            {
+                "artists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HZtdKfC4xU0wvhEyYDWiY"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HZtdKfC4xU0wvhEyYDWiY",
+                        "id": "5HZtdKfC4xU0wvhEyYDWiY",
+                        "name": "HIEUTHUHAI",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HZtdKfC4xU0wvhEyYDWiY"
+                    }
+                ],
+                "disc_number": 1,
+                "duration_ms": 185249,
+                "explicit": false,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/5WKMqYQRIaNIsMLhHEzssC"
+                },
+                "href": "https://api.spotify.com/v1/tracks/5WKMqYQRIaNIsMLhHEzssC",
+                "id": "5WKMqYQRIaNIsMLhHEzssC",
+                "name": "Giờ Thì Ai Cười",
+                "preview_url": null,
+                "track_number": 2,
+                "type": "track",
+                "uri": "spotify:track:5WKMqYQRIaNIsMLhHEzssC",
+                "is_local": false
+            },
+            {
+                "artists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HZtdKfC4xU0wvhEyYDWiY"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HZtdKfC4xU0wvhEyYDWiY",
+                        "id": "5HZtdKfC4xU0wvhEyYDWiY",
+                        "name": "HIEUTHUHAI",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HZtdKfC4xU0wvhEyYDWiY"
+                    },
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/1WvNgEoB66jmHodcj15Zi9"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/1WvNgEoB66jmHodcj15Zi9",
+                        "id": "1WvNgEoB66jmHodcj15Zi9",
+                        "name": "B Ray",
+                        "type": "artist",
+                        "uri": "spotify:artist:1WvNgEoB66jmHodcj15Zi9"
+                    },
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/6kFhNMq6O8P5QKdqlGMUVW"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/6kFhNMq6O8P5QKdqlGMUVW",
+                        "id": "6kFhNMq6O8P5QKdqlGMUVW",
+                        "name": "Tage",
+                        "type": "artist",
+                        "uri": "spotify:artist:6kFhNMq6O8P5QKdqlGMUVW"
+                    }
+                ],
+                "disc_number": 1,
+                "duration_ms": 201407,
+                "explicit": true,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/4LAdZsiks8vsw3e1iZQgVY"
+                },
+                "href": "https://api.spotify.com/v1/tracks/4LAdZsiks8vsw3e1iZQgVY",
+                "id": "4LAdZsiks8vsw3e1iZQgVY",
+                "name": "Không Phải Gu",
+                "preview_url": null,
+                "track_number": 3,
+                "type": "track",
+                "uri": "spotify:track:4LAdZsiks8vsw3e1iZQgVY",
+                "is_local": false
+            },
+            {
+                "artists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HZtdKfC4xU0wvhEyYDWiY"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HZtdKfC4xU0wvhEyYDWiY",
+                        "id": "5HZtdKfC4xU0wvhEyYDWiY",
+                        "name": "HIEUTHUHAI",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HZtdKfC4xU0wvhEyYDWiY"
+                    }
+                ],
+                "disc_number": 1,
+                "duration_ms": 186870,
+                "explicit": true,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/0a8hkxl5Bhn8Av2qIbjrXg"
+                },
+                "href": "https://api.spotify.com/v1/tracks/0a8hkxl5Bhn8Av2qIbjrXg",
+                "id": "0a8hkxl5Bhn8Av2qIbjrXg",
+                "name": "Siêu Sao",
+                "preview_url": null,
+                "track_number": 4,
+                "type": "track",
+                "uri": "spotify:track:0a8hkxl5Bhn8Av2qIbjrXg",
+                "is_local": false
+            },
+            {
+                "artists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HZtdKfC4xU0wvhEyYDWiY"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HZtdKfC4xU0wvhEyYDWiY",
+                        "id": "5HZtdKfC4xU0wvhEyYDWiY",
+                        "name": "HIEUTHUHAI",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HZtdKfC4xU0wvhEyYDWiY"
+                    }
+                ],
+                "disc_number": 1,
+                "duration_ms": 168323,
+                "explicit": false,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/1ee8SDc7PdY2FbGtjB6kUb"
+                },
+                "href": "https://api.spotify.com/v1/tracks/1ee8SDc7PdY2FbGtjB6kUb",
+                "id": "1ee8SDc7PdY2FbGtjB6kUb",
+                "name": "Đi Họp Lớp",
+                "preview_url": null,
+                "track_number": 5,
+                "type": "track",
+                "uri": "spotify:track:1ee8SDc7PdY2FbGtjB6kUb",
+                "is_local": false
+            },
+            {
+                "artists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HZtdKfC4xU0wvhEyYDWiY"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HZtdKfC4xU0wvhEyYDWiY",
+                        "id": "5HZtdKfC4xU0wvhEyYDWiY",
+                        "name": "HIEUTHUHAI",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HZtdKfC4xU0wvhEyYDWiY"
+                    }
+                ],
+                "disc_number": 1,
+                "duration_ms": 228413,
+                "explicit": false,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/1K0HQ30Wc11okzlcnFA7Ub"
+                },
+                "href": "https://api.spotify.com/v1/tracks/1K0HQ30Wc11okzlcnFA7Ub",
+                "id": "1K0HQ30Wc11okzlcnFA7Ub",
+                "name": "Không Thể Say",
+                "preview_url": null,
+                "track_number": 6,
+                "type": "track",
+                "uri": "spotify:track:1K0HQ30Wc11okzlcnFA7Ub",
+                "is_local": false
+            },
+            {
+                "artists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HZtdKfC4xU0wvhEyYDWiY"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HZtdKfC4xU0wvhEyYDWiY",
+                        "id": "5HZtdKfC4xU0wvhEyYDWiY",
+                        "name": "HIEUTHUHAI",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HZtdKfC4xU0wvhEyYDWiY"
+                    },
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/3y6Lfjkrdn5TgkbgDxbpvM"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/3y6Lfjkrdn5TgkbgDxbpvM",
+                        "id": "3y6Lfjkrdn5TgkbgDxbpvM",
+                        "name": "marzuz",
+                        "type": "artist",
+                        "uri": "spotify:artist:3y6Lfjkrdn5TgkbgDxbpvM"
+                    }
+                ],
+                "disc_number": 1,
+                "duration_ms": 201589,
+                "explicit": false,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/4nXrVH5xwN1w6TpmP7uu8n"
+                },
+                "href": "https://api.spotify.com/v1/tracks/4nXrVH5xwN1w6TpmP7uu8n",
+                "id": "4nXrVH5xwN1w6TpmP7uu8n",
+                "name": "Exit Sign",
+                "preview_url": null,
+                "track_number": 7,
+                "type": "track",
+                "uri": "spotify:track:4nXrVH5xwN1w6TpmP7uu8n",
+                "is_local": false
+            },
+            {
+                "artists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HZtdKfC4xU0wvhEyYDWiY"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HZtdKfC4xU0wvhEyYDWiY",
+                        "id": "5HZtdKfC4xU0wvhEyYDWiY",
+                        "name": "HIEUTHUHAI",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HZtdKfC4xU0wvhEyYDWiY"
+                    }
+                ],
+                "disc_number": 1,
+                "duration_ms": 41252,
+                "explicit": true,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/6mf638BuD71YjIKkVDCnSb"
+                },
+                "href": "https://api.spotify.com/v1/tracks/6mf638BuD71YjIKkVDCnSb",
+                "id": "6mf638BuD71YjIKkVDCnSb",
+                "name": "Visa Interlude",
+                "preview_url": null,
+                "track_number": 8,
+                "type": "track",
+                "uri": "spotify:track:6mf638BuD71YjIKkVDCnSb",
+                "is_local": false
+            },
+            {
+                "artists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HZtdKfC4xU0wvhEyYDWiY"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HZtdKfC4xU0wvhEyYDWiY",
+                        "id": "5HZtdKfC4xU0wvhEyYDWiY",
+                        "name": "HIEUTHUHAI",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HZtdKfC4xU0wvhEyYDWiY"
+                    }
+                ],
+                "disc_number": 1,
+                "duration_ms": 222194,
+                "explicit": true,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/2wf7A2Exrq6pQ3aoKWC4o3"
+                },
+                "href": "https://api.spotify.com/v1/tracks/2wf7A2Exrq6pQ3aoKWC4o3",
+                "id": "2wf7A2Exrq6pQ3aoKWC4o3",
+                "name": "Sắp Nổi Tiếng",
+                "preview_url": null,
+                "track_number": 9,
+                "type": "track",
+                "uri": "spotify:track:2wf7A2Exrq6pQ3aoKWC4o3",
+                "is_local": false
+            },
+            {
+                "artists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HZtdKfC4xU0wvhEyYDWiY"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HZtdKfC4xU0wvhEyYDWiY",
+                        "id": "5HZtdKfC4xU0wvhEyYDWiY",
+                        "name": "HIEUTHUHAI",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HZtdKfC4xU0wvhEyYDWiY"
+                    }
+                ],
+                "disc_number": 1,
+                "duration_ms": 209078,
+                "explicit": false,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/4YNbX3laAv2JPT2oY1bfeP"
+                },
+                "href": "https://api.spotify.com/v1/tracks/4YNbX3laAv2JPT2oY1bfeP",
+                "id": "4YNbX3laAv2JPT2oY1bfeP",
+                "name": "KPI",
+                "preview_url": null,
+                "track_number": 10,
+                "type": "track",
+                "uri": "spotify:track:4YNbX3laAv2JPT2oY1bfeP",
+                "is_local": false
+            },
+            {
+                "artists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HZtdKfC4xU0wvhEyYDWiY"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HZtdKfC4xU0wvhEyYDWiY",
+                        "id": "5HZtdKfC4xU0wvhEyYDWiY",
+                        "name": "HIEUTHUHAI",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HZtdKfC4xU0wvhEyYDWiY"
+                    }
+                ],
+                "disc_number": 1,
+                "duration_ms": 199428,
+                "explicit": false,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/3W0j4uBNfn6kilhrVeZM8o"
+                },
+                "href": "https://api.spotify.com/v1/tracks/3W0j4uBNfn6kilhrVeZM8o",
+                "id": "3W0j4uBNfn6kilhrVeZM8o",
+                "name": "Everything Will Be Okay",
+                "preview_url": null,
+                "track_number": 11,
+                "type": "track",
+                "uri": "spotify:track:3W0j4uBNfn6kilhrVeZM8o",
+                "is_local": false
+            },
+            {
+                "artists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HZtdKfC4xU0wvhEyYDWiY"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HZtdKfC4xU0wvhEyYDWiY",
+                        "id": "5HZtdKfC4xU0wvhEyYDWiY",
+                        "name": "HIEUTHUHAI",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HZtdKfC4xU0wvhEyYDWiY"
+                    }
+                ],
+                "disc_number": 1,
+                "duration_ms": 231319,
+                "explicit": false,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/1jF6ctFxoebFqI4TFHssR6"
+                },
+                "href": "https://api.spotify.com/v1/tracks/1jF6ctFxoebFqI4TFHssR6",
+                "id": "1jF6ctFxoebFqI4TFHssR6",
+                "name": "Cho Em An Toàn",
+                "preview_url": null,
+                "track_number": 12,
+                "type": "track",
+                "uri": "spotify:track:1jF6ctFxoebFqI4TFHssR6",
+                "is_local": false
+            },
+            {
+                "artists": [
+                    {
+                        "external_urls": {
+                            "spotify": "https://open.spotify.com/artist/5HZtdKfC4xU0wvhEyYDWiY"
+                        },
+                        "href": "https://api.spotify.com/v1/artists/5HZtdKfC4xU0wvhEyYDWiY",
+                        "id": "5HZtdKfC4xU0wvhEyYDWiY",
+                        "name": "HIEUTHUHAI",
+                        "type": "artist",
+                        "uri": "spotify:artist:5HZtdKfC4xU0wvhEyYDWiY"
+                    }
+                ],
+                "disc_number": 1,
+                "duration_ms": 170898,
+                "explicit": false,
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/track/6D94p9ASguBcYlDC0o56vx"
+                },
+                "href": "https://api.spotify.com/v1/tracks/6D94p9ASguBcYlDC0o56vx",
+                "id": "6D94p9ASguBcYlDC0o56vx",
+                "name": "NOLOVENOLIFE",
+                "preview_url": null,
+                "track_number": 13,
+                "type": "track",
+                "uri": "spotify:track:6D94p9ASguBcYlDC0o56vx",
+                "is_local": false
+            }
+        ]
+    },
+    "copyrights": [
+        {
+            "text": "© 2023 HIEUTHUHAI, VIE NETWORK CORPORATION by DatVietVAC, exclusively licensed to M Music Records",
+            "type": "C"
+        },
+        {
+            "text": "℗ 2023 HIEUTHUHAI, VIE NETWORK CORPORATION by DatVietVAC, exclusively licensed to M Music Records",
+            "type": "P"
+        }
+    ],
+    "external_ids": {
+        "upc": "602458735987"
+    },
+    "genres": [],
+    "label": "M Music Records",
+    "popularity": 67
+}

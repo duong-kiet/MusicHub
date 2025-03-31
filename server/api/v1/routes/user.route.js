@@ -5,6 +5,8 @@ const controller = require('../controllers/user.controller')
 
 router.post("/validateGmail", controller.validateGmail)
 
-router.post("/register", controller.registerPost)
+router.post("/signup", controller.signupPost)
+
+router.post("/signin", controller.signinPost)
 
 module.exports = router

@@ -5,14 +5,14 @@ import { Grid2 } from '@mui/material';
 import { Link } from "react-router";
 
 export default function TopArtist() {
-  const [artistList, setArtistList] = useState([])
+  const [albumList, setAlbumList] = useState([])
   
   useEffect(() => {
-    fetch("http://localhost:5000/api/v1/artists/top")
+    fetch("http://localhost:5000/api/v1/albums/top")
       .then(res => res.json())
       .then(data => {
           if(data) {
-            setArtistList(data)
+            setAlbumList(data)
           }
       })
   }, []) 
@@ -32,11 +32,11 @@ export default function TopArtist() {
           },
         }}
       >
-        Nghệ sĩ phổ biến
+        ALbum phổ biến
       </Typography>
 
       <Grid2 container spacing={2} mt="12px">
-        {artistList?.map((artist, index) => {
+        {albumList?.map((album, index) => {
           return <Grid2 size={2.4} key={artist.id}>
               <Box>
                 <img src={artist.images} width="150px" height="150px" style={{ borderRadius: '50%', objectFit: 'cover'}}/>
@@ -45,7 +45,7 @@ export default function TopArtist() {
                     color: "#3ee6ef"
                   }
                 }}>
-                  {artist.name}
+                  {album.name}
                 </Typography>
                 <Typography sx={{ color: "#8b8b8b", textTransform: "capitalize" }}>
                   {artist.type}

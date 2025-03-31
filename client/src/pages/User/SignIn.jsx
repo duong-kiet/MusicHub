@@ -2,9 +2,83 @@ import React, { useEffect, useState } from 'react';
 import {Box, Button, Stack} from '@mui/material';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router-dom";
+
+const validateEmail = (email) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};
+
+const validatePassword = (password) => {
+  return password != ""
+};
 
 export default function SignIn() {
+  const navigate = useNavigate()
+  const [message, setMessage] = useState('');
+  
+  const [email, setEmail] = useState("")
+  const [isValidEmail, setIsValidEmail] = useState(true)
+  const [password, setPassword] = useState("")
+  const [isValidPassword, setIsValidPassword] = useState(true)
+
+  const handleSubmit = (email, password) => {
+    if(!validateEmail(email) || email == "") {
+      setIsValidEmail(false)
+      setMessage("Invalid Email. Check again")
+    } 
+    if(!validatePassword(password) || password == "") {
+      setIsValidPassword(false)
+      setMessage("Invalid Password. Try again")
+    }
+    if(validateEmail(email)) {  
+      setIsValidEmail(true)
+    }
+    if(validatePassword(password)) {
+      setIsValidPassword(true)
+    }
+    if(isValidEmail && isValidPassword && validateEmail(email) && validatePassword(password)) {
+      let signinData = { email: email, password: password }
+
+      fetch("http://localhost:5000/api/v1/user/signin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(signinData)
+      })
+      .then(res => res.json())
+      .then(data => {
+        if(data.message == "User deleted") {
+          setIsValidEmail(false)
+          setMessage("Invalid Email. User deleted")
+        } else if(data.message == "Wrong password") {
+          setIsValidPassword(false)
+          setMessage("Wrong Password. Try again")
+        } else if(data.message == "User existed") {
+          setIsValidEmail(false)
+          setMessage("Invalid Email. User existed")
+        } else if(data.message == "User not found") {
+          setIsValidEmail(false)
+          setMessage("Invalid Email. User not existed")
+        } else if(data.message == "User sign in successfully") {
+          navigate("/dashboard");
+        }
+      })
+    }
+  }
+
+  const handleChangeEmail = (event) => {
+    setEmail(event.target.value);
+  }
+
+  const handleChangePassword = (event) => {
+    setPassword(event.target.value);
+  }
+
   return (
     <Box 
       sx={{ 
@@ -67,6 +141,7 @@ export default function SignIn() {
                 Email 
               </Typography>
               <TextField 
+                {...(isValidEmail ? {} : { error: "true", helperText: message })} 
                 color="primary"
                 focused
                 sx={{ 
@@ -75,6 +150,7 @@ export default function SignIn() {
                 }} 
                 placeholder="Nhập email của bạn"
                 type="email" 
+                onChange={() => handleChangeEmail(event)}
               />
             </Box>
             <Box mb={5}>
@@ -88,6 +164,7 @@ export default function SignIn() {
                 Mật khẩu
               </Typography>
               <TextField 
+                {...(isValidPassword ? {} : { error: "true", helperText: message })} 
                 color="primary"
                 focused
                 sx={{ 
@@ -96,10 +173,12 @@ export default function SignIn() {
                 }} 
                 placeholder="Nhập mật khẩu của bạn"
                 type="password" 
+                onChange={() => handleChangePassword(event)}
               />
             </Box>
 
             <Button 
+              onClick={() => handleSubmit(email, password)}
               variant="contained"
               sx={{
                 padding: '12px',

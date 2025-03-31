@@ -45,7 +45,7 @@ export default function SignUp_Step2() {
     if(isValidName && isValidDate && validateName(name) && validateDate(date)) {
       let registerData = {name: name, birthday: date, gender: gender, email: email, password: password }
 
-      fetch("http://localhost:5000/api/v1/user/register", {
+      fetch("http://localhost:5000/api/v1/user/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -54,7 +54,9 @@ export default function SignUp_Step2() {
       })
       .then(res => res.json())
       .then(data => {
-        navigate("/dashboard");
+        if(data.message == "User sign up successfully") {
+          navigate("/dashboard");
+        }
       })
     }
   }
