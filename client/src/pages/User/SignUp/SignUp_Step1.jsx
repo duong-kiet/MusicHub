@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import ProgressBar from '../../../components/ui/ProgressBar';
 import { Link } from "react-router"; 
+import { useNavigate, useLocation } from "react-router-dom";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 const validatePassword = (password) => {
@@ -11,6 +12,10 @@ const validatePassword = (password) => {
 };
 
 export default function SignUp_Step1() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { email } = location.state || {};
+
   const [password, setPassword] = useState("")
   const [isValidPassword, setIsValidPassword] = useState(true)
 
@@ -19,6 +24,10 @@ export default function SignUp_Step1() {
       setIsValidPassword(false)
     } else {
       setIsValidPassword(true)
+    }
+    
+    if(isValidPassword && validatePassword(password)) {
+      navigate("/user/signup/step=2", { state: { email, password } });
     }
   }
 
@@ -98,7 +107,7 @@ export default function SignUp_Step1() {
               </Typography>
 
               <TextField
-               {...(isValidPassword ? {} : { error: "true", helperText: "Invalid Password. Check again" })}  
+                {...(isValidPassword ? {} : { error: "true", helperText: "Invalid Password. Check again" })} 
                 color="primary"
                 focused
                 sx={{ 
@@ -109,12 +118,10 @@ export default function SignUp_Step1() {
                 type="password" 
                 name="password"
                 onChange={() => handleChangePassword(event)}
-                required
               />
             </Box>
 
             <Button 
-              {...(validatePassword(password) ? { component: Link, to: "/user/signup/step=2" } : {})}
               onClick={() => handleSubmitPassword(password)}
               variant="contained"
               sx={{

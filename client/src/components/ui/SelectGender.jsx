@@ -4,14 +4,18 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import {Box, Button, Stack} from '@mui/material';
-import FormLabel from '@mui/material/FormLabel';
 
-export default function SelectGender() {
+export default function SelectGender({defaultGender, setGender}) {
+  const handleChangeGender = (event) => {
+    setGender(event.target.value)
+  }
+
   return (
     <FormControl>
       <RadioGroup
-        defaultValue="male"
-        name="radio-buttons-group"
+        value={defaultGender}
+        name="gender"
+        onChange={() => handleChangeGender(event)} 
         sx={{color: 'white'}}
       >
         <Stack direction="row">

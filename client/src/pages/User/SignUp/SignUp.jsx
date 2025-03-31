@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {Box, Button, Stack} from '@mui/material';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const validateEmail = (email) => {
   return String(email)
@@ -13,14 +13,39 @@ const validateEmail = (email) => {
 };
 
 export default function SignUp() {
+  const navigate = useNavigate()
   const [email, setEmail] = useState("")
   const [isValidEmail, setIsValidEmail] = useState(true)
+  const [message, setMessage] = useState('');
   
   const handleSubmitEmail = (email) => {
     if(!validateEmail(email) || email == "") {
       setIsValidEmail(false)
+      setMessage("Invalid Email. Check again")
     } else {
       setIsValidEmail(true)
+    }
+
+    if(isValidEmail && validateEmail(email)) {
+      fetch("http://localhost:5000/api/v1/user/validateGmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({email: email})
+      })
+      .then(res => res.json())
+      .then(data => {
+        if(data.message == "User deleted") {
+          setIsValidEmail(false)
+          setMessage("Invalid Email. User deleted")
+        } else if(data.message == "User existed") {
+          setIsValidEmail(false)
+          setMessage("Invalid Email. User existed")
+        } else {
+          navigate("/user/signup/step=1", { state: { email } });
+        }
+      })
     }
   }
 
@@ -92,7 +117,7 @@ export default function SignUp() {
               </Typography>
 
               <TextField 
-                {...(isValidEmail ? {} : { error: "true", helperText: "Invalid Email. Check again" })} 
+                {...(isValidEmail ? {} : { error: "true", helperText: message })} 
                 color="primary"
                 focused
                 sx={{ 
@@ -108,7 +133,6 @@ export default function SignUp() {
             </Box>
 
             <Button 
-              {...(validateEmail(email) ? { component: Link, to: "/user/signup/step=1" } : {})}
               onClick={() => handleSubmitEmail(email)}
               variant="contained"
               sx={{

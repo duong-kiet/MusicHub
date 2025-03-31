@@ -6,8 +6,67 @@ import ProgressBar from '../../../components/ui/ProgressBar';
 import SelectGender from '../../../components/ui/SelectGender';
 import { Link } from "react-router"; 
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import { useLocation, useNavigate } from "react-router-dom";
+
+const validateName = (name) => {
+  return name != ""
+};
+
+const validateDate = (date) => {
+  return date != ""
+};
 
 export default function SignUp_Step2() {
+  const navigate = useNavigate()
+  const location = useLocation();
+  const { email, password } = location.state || {};
+
+  const [name, setName] = useState("")
+  const [isValidName, setIsValidName] = useState(true)
+
+  const [date, setDate] = useState("")
+  const [isValidDate, setIsValidDate] = useState(true)
+
+  const [gender, setGender] = useState("male")
+
+  const handleSubmitComplete = (name, date, gender) => {
+    if(!validateName(name) || name == "") {
+      setIsValidName(false)
+    } 
+    if(!validateDate(date) || date == "") {
+      setIsValidDate(false)
+    }
+    if(validateName(name)) {  
+      setIsValidName(true)
+    }
+    if(validateDate(date)) {
+      setIsValidDate(true)
+    }
+    if(isValidName && isValidDate && validateName(name) && validateDate(date)) {
+      let registerData = {name: name, birthday: date, gender: gender, email: email, password: password }
+
+      fetch("http://localhost:5000/api/v1/user/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(registerData)
+      })
+      .then(res => res.json())
+      .then(data => {
+        navigate("/dashboard");
+      })
+    }
+  }
+
+  const handleChangeName = (event) => {
+    setName(event.target.value);
+  }
+
+  const handleChangeDate = (event) => {
+    setDate(event.target.value);
+  }
+
   return (
     <Box 
       sx={{ 
@@ -80,6 +139,7 @@ export default function SignUp_Step2() {
               </Typography>
 
               <TextField 
+                {...(isValidName ? {} : { error: "true", helperText: "Invalid Name. Check again" })}
                 color="primary"
                 focused
                 sx={{ 
@@ -89,6 +149,7 @@ export default function SignUp_Step2() {
                 placeholder="Nhập tên của bạn"
                 type="text" 
                 name="name"
+                onChange={() => handleChangeName(event)}
               />
             </Box>
 
@@ -105,7 +166,8 @@ export default function SignUp_Step2() {
               </Typography>
 
               <TextField 
-                  color="primary"
+                {...(isValidDate ? {} : { error: "true", helperText: "Invalid Date. Check again" })}
+                color="primary"
                 focused
                 sx={{ 
                   input: { color: "white"},
@@ -114,7 +176,7 @@ export default function SignUp_Step2() {
                 placeholder="Nhập mật khẩu của bạn"
                 type="date" 
                 name="datebirth"
-                
+                onChange={() => handleChangeDate(event)}
               />
             </Box>
 
@@ -129,10 +191,11 @@ export default function SignUp_Step2() {
                 Giới tính
               </Typography>
 
-              <SelectGender />
+              <SelectGender defaultGender={gender} setGender={setGender} />
             </Box>
 
             <Button 
+              onClick={() => handleSubmitComplete(name, date, gender)}
               variant="contained"
               sx={{
                 padding: '12px',
