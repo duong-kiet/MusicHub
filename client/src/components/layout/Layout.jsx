@@ -4,12 +4,13 @@ import { Grid2 } from '@mui/material';
 import Sider from './Sider'
 import MainContent from './MainContent'
 
-export default function Layout({ content }) {
+export default function Layout( props) {
+  const { content, sider } = props
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid2 container>
         <Grid2 size={3.8}>
-          <Sider />
+          <Sider sider={sider}/>
         </Grid2>
         <Grid2 size={8.2}>
           <MainContent content={content}/>

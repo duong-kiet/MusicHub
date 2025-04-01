@@ -1,12 +1,11 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
-export default function Sider() {
+export default function Sider({ sider }) {
   return (
-    <Box sx={{ p: 2, height: '100vh', backgroundColor: '#1f2937'}}>
+    <Box sx={{ p: 2, height: '630px', backgroundColor: '#1f2937'}}>
       <Box
         sx={{ backgroundColor: '#1f2937' }}
       >
@@ -34,6 +33,9 @@ export default function Sider() {
             MusicHub
           </Typography>
         </Toolbar>
+        
+        {sider}
+
       </Box>
     </Box>
   );

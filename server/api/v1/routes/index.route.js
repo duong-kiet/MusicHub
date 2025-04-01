@@ -7,6 +7,8 @@ module.exports = (app) => {
 
   app.use(version + "/artists", artistRoutes)
 
+  app.use(version + "/songs", songRoutes)
+
   app.use(version + "/user", userRoutes)
   
   // app.use(version + "/songs", songRoutes)

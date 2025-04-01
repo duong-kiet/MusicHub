@@ -18,7 +18,7 @@ export default function TopArtist() {
   }, []) 
 
   return (
-    <Box mb="24px">
+    <Box mb="30px">
       <Typography
         component={Link}
         to="/artists"

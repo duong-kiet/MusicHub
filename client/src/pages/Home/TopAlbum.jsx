@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import { Grid2 } from '@mui/material';
 import { Link } from "react-router";
 
-export default function TopArtist() {
+export default function TopAlbum() {
   const [albumList, setAlbumList] = useState([])
   
   useEffect(() => {
@@ -32,7 +32,7 @@ export default function TopArtist() {
           },
         }}
       >
-        ALbum phổ biến
+        Album phổ biến
       </Typography>
 
       <Grid2 container spacing={2} mt="12px">

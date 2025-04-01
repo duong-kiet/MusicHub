@@ -58,12 +58,9 @@ export default function SignIn() {
         } else if(data.message == "Wrong password") {
           setIsValidPassword(false)
           setMessage("Wrong Password. Try again")
-        } else if(data.message == "User existed") {
-          setIsValidEmail(false)
-          setMessage("Invalid Email. User existed")
         } else if(data.message == "User not found") {
           setIsValidEmail(false)
-          setMessage("Invalid Email. User not existed")
+          setMessage("Invalid Email. User not found")
         } else if(data.message == "User sign in successfully") {
           navigate("/dashboard");
         }
