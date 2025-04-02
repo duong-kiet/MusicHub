@@ -15,7 +15,7 @@ const Avatar = styled('img')(() => ({
 
 export default function Artist() {
   const [artistList, setArtistList] = useState([])
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const [imageModal, setImageModal] = useState('')
   const handleOpen = (image) => {
     setOpen(true);
